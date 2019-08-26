@@ -8,7 +8,7 @@ RUN curl https://github.com/glassechidna/stackit/releases/download/${STACKIT_VER
 RUN tar xvzf stackit.tar.gz && \
     mv ./stackit /usr/bin &&\
     chmod a+x /usr/bin/stackit 
-RUN dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
+RUN dpkg --purge packages-microsoft-prod && dpkg -i packages-microsoft-prod.deb
 RUN apt-get update
 RUN apt-get install dotnet-sdk-2.2
 RUN dotnet tool install -g Amazon.Lambda.Tools
