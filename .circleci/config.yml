@@ -10,4 +10,3 @@ workflows:
           create-repo: true
           region: BUILD_AWS_REGION
           repo: cicd/aws-base
-          tag: "${CIRCLE_SHA1}"
