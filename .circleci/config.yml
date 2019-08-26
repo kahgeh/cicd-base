@@ -5,8 +5,9 @@ workflows:
   build_and_push_image:
     jobs:
       - aws-ecr/build_and_push_image:
+          account-url: BUILD_AWS_ECR_ACCOUNT_URL
           context: 10kgDevTest
           create-repo: true
-          region: AWS_REGION
+          region: BUILD_AWS_REGION
           repo: cicd-base
           tag: "${CIRCLE_SHA1}"
