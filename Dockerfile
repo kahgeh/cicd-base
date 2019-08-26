@@ -17,3 +17,4 @@ RUN chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 RUN apt-get update -y
 RUN apt-get install dotnet-sdk-2.2 -y
+RUN dotnet tool install -g Amazon.Lambda.Tools
