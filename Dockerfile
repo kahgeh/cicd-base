@@ -15,6 +15,5 @@ RUN curl https://packages.microsoft.com/config/ubuntu/19.04/prod.list -so prod.l
 RUN mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 RUN chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
-RUN apt-get install -y apt-transport-https
-RUN apt-get update
-RUN apt-get install dotnet-sdk-2.2
+RUN apt-get update -y
+RUN apt-get install dotnet-sdk-2.2 -y
