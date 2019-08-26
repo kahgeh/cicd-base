@@ -9,5 +9,5 @@ workflows:
           context: 10kgDevTest
           create-repo: true
           region: BUILD_AWS_REGION
-          repo: cicd-base
+          repo: cicd/aws-base
           tag: "${CIRCLE_SHA1}"
