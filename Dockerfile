@@ -9,9 +9,9 @@ RUN tar xvzf stackit.tar.gz && \
     mv ./stackit /usr/bin &&\
     chmod a+x /usr/bin/stackit 
 RUN apt-get install -y gpg
-RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
 RUN mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-RUN wget -q https://packages.microsoft.com/config/ubuntu/19.04/prod.list
+RUN curl https://packages.microsoft.com/config/ubuntu/19.04/prod.list -so prod.list
 RUN mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 RUN chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
